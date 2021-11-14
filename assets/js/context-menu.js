@@ -169,20 +169,20 @@
       window.console && console.log(m) || alert(m);
     },
     items: {
-      "edit": {
-        name: "Edit"
+      "Admission": {
+        name: "My Admission Letter"
       },
-      "cut": {
-        name: "Cut"
+      "Acceptance": {
+        name: "Acceptance Form"
       },
-      "copy": {
-        name: "Copy"
+      "Guarantor": {
+        name: "Guarantor Form"
       },
-      "paste": {
-        name: "Paste"
+      "Fees": {
+        name: "School Fees Payable"
       },
-      "delete": {
-        name: "Delete"
+      "Profile": {
+        name: "My Profile"
       }
     }
   });

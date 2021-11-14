@@ -23,45 +23,27 @@ class homeController
             $url =  "//" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             header('Location: ' . strtok($url, '?'));
         }
+
+        if (app('auth')->isAuthenticated() && app('auth')->user()['role'] == 4) {
+            header("Location: " . route('my_student_profile'));
+        }
+        if (app('auth')->isAuthenticated() && app('auth')->user()['role'] == 2) {
+            header("Location: " . route('dashboard'));
+        }
     }
 
     // main index function to  load homepage
     public function index()
     {
-        // if (!app('auth')->isAuthenticated()) {
-        //     header("Location: " . route('dashboard'));
-        // }
-
         $data = array();
-        // echo app('twig')->render('login.html', $data);
-        echo app('twig')->render('dashboard.html', $data);
+        echo app('twig')->render('index.html', $data);
     }
 
-    // login page
-    public function login()
-    {
-        if (app('request')->method == 'POST') {
-            $post_data = app('request')->body;
-            $data = app('auth')->login($post_data);
-            // echo app('twig')->render('login', $data);
-            header("Location: " . route('login'));
-        }
-       
-    }
-
-    public function register(){
-        if (app('request')->method == 'POST') {
-            $post_data = app('request')->body;
-            $data = app('auth')->register($post_data);
-            echo app('twig')->render('register.html', $data);
-        }
-        else {
-            if(app('auth')->isAuthenticated()){
-                header("Location: ". route('dashboard'));
-            }
-            $data = array();
-            echo app('twig')->render('register.html');
-        }
+    public function application(){
+        $data = array();
+        $data['title'] = 'Start your online Application';
+        $data['uid'] = randomPassword('1234567890', 8);
+        echo app('twig')->render('application_form.html', $data);
     }
 
     // log out and destroy sessions
@@ -72,11 +54,7 @@ class homeController
             unset($_COOKIE['cn_auth_key']);
             setcookie('cn_auth_key', null, -1, '/');
         }
-        if (isset($_SERVER['HTTP_REFERER'])) {
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
-        } else {
-            header("Location: " . route('login'));
-        }
+        header("Location: " . route('home'));
     }
 
     // load forget password page
@@ -145,6 +123,14 @@ class homeController
             }
             echo app('twig')->render('reset_password.html', $data);
         }
+    }
+
+    public function getAdmissionList(){
+        $session = get_current_session();
+        $data = array();
+        $data['title'] = 'Current Admission List';
+        $data['admission'] = app('students')->getAdmissionList(false, false, $session, false,true);
+        echo app('twig')->render('admission_list.html', $data);
     }
 
 }

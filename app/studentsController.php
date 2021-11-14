@@ -25,8 +25,8 @@ class studentsController
     public function index(){
         $data = array();
         $data['title'] = "My profile";
-        // $data['student'] = app('students')->get();
-        echo app('twig')->render('student-profile.html', $data);
+        $data['student'] = app('students')->get();
+        echo app('twig')->render('student_profile.html', $data);
     }
 
     // public function edit(){
