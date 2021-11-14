@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{{title}}</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{{SITE_URL}}assets/vendors/feather/feather.css">
+  <link rel="stylesheet" href="{{SITE_URL}}assets/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="{{SITE_URL}}assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="{{SITE_URL}}assets/vendors/jquery-toast-plugin/jquery.toast.min.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{{SITE_URL}}assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="{{SITE_URL}}assets/css/horizontal-layout-light/style.css">
+  <!-- <link rel="stylesheet" href="{{SITE_URL}}assets/css/vertical-layout-light/style.css"> -->
+  <link rel="stylesheet" href="{{SITE_URL}}assets/vendors/jquery-contextmenu/jquery.contextMenu.min.css">
+  <link rel="stylesheet" href="{{SITE_URL}}assets/vendors/simple-line-icons/css/simple-line-icons.css">
+
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{{SITE_URL}}assets/images/favicon.png" />
+  {% block styles %} {% endblock %}
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial -->
+    <div class="horizontal-menu">
+      <nav class="navbar top-navbar col-lg-12 col-12 p-0"  style="background-color: #072150;">
+        <div class="container">
+          <!-- <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+            <a class="navbar-brand brand-logo" href="/"><img src="{{SITE_URL}}assets/images/logo-light.svg" alt="logo"></a>
+            <a class="navbar-brand brand-logo-mini" href="/"><img src="{{SITE_URL}}assets/mages/logo-mini.svg" alt="logo"></a>
+          </div> -->
+          <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" style="height: 155px">
+              <img src="{{SITE_URL}}assets/images/bg.png" width="150%">
+              <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas" style="margin-right: 16px">
+                <span class="icon-menu"></span>
+              </button>
+           </div>
+        </div>
+      </nav>
+      <nav class="bottom-navbar">
+        <div class="container">
+          <ul class="nav page-navigation">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">
+                <i class="icon-home menu-icon"></i>
+                <span class="menu-title">Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('application')}}">
+                  <i class="icon-grid menu-icon"></i>
+                  <span class="menu-title">Start Application</span>
+                </a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="icon-organization menu-icon"></i>
+                  <span class="menu-title">Continue Application</span>
+                </a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="icon-badge menu-icon"></i>
+                  <span class="menu-title">Admission List</span>
+                </a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="icon-graduation menu-icon"></i>
+                <span class="menu-title">Accept Admission</span>
+              </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="icon-phone menu-icon"></i>
+                  <span class="menu-title">For Enquiring Call: 08124624719</span>
+                </a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial -->
+      <div class="main-panel">
+
+        {% block content %} {% endblock %}
+
+        
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ms-1"></i></span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+  
+    <script src="{{SITE_URL}}assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- <script src="{{SITE_URL}}assets/vendors/js/vendor.bundle.base.js"></script> -->
+    <!-- endinject -->
+
+    <!-- Plugin js for this page -->
+    <script src="{{SITE_URL}}assets/vendors/jquery-steps/jquery.steps.min.js"></script>
+    <script src="{{SITE_URL}}assets/vendors/jquery-toast-plugin/jquery.toast.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{{SITE_URL}}assets/js/hoverable-collapse.js"></script>
+    <script src="{{SITE_URL}}assets/js/template.js"></script>
+    <script src="{{SITE_URL}}assets/js/settings.js"></script>
+    <script src="{{SITE_URL}}assets/js/todolist.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    {% block scripts %} {% endblock %}
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+  <script> 
+  $("[data-toggle=offcanvas]").click(function() {
+      $(".horizontal-menu .bottom-navbar").toggleClass("header-toggled");
+  });
+  
+  
+ 
+    var form = $("#application-form");
+    form.children("div").steps({
+      headerTag: "h3",
+      bodyTag: "section",
+      transitionEffect: "slideLeft",
+      onFinished: function(event, currentIndex) {
+        $('button#submit').trigger('click');
+        if(form.hasClass('error')){
+          $.toast({
+            heading: 'Information',
+            text: 'Make sure fields marked (*) are not left empty or are filled correctly',
+            icon: 'warning',
+            position: 'top-right',
+            loader: true,        // Change it to false to disable loader
+            loaderBg: '#9EC600'  // To change the background
+          });
+        }
+      }
+    });
+
+    $('form#application-form').submit(function(e){
+      e.preventDefault();
+      var form = $(this);
+      form.removeClass('error');
+      var url = form.attr('action');
+      $.ajax({
+        url: url,
+        type: 'POST',
+        data: form.serialize(),
+        success: function (response){
+          if(response.status){
+            form.remove('input#app');
+            $.toast({
+              heading: 'Information',
+              text: response.message,
+              icon: 'success',
+              position: 'top-right',
+              loader: true,        // Change it to false to disable loader
+              loaderBg: '#9EC600'  // To change the background
+            });
+            swal('Success!', 'Application Number: '+response.app_number, 'success');
+            form.append('<input name="app_number" id="app" value="'+response.app_number+'" type="hidden">');
+          }
+          else{
+            $.toast({
+              heading: 'Information',
+              text: response.message,
+              icon: 'warning',
+              position: 'top-right',
+              loader: true,        // Change it to false to disable loader
+              loaderBg: '#9EC600'  // To change the background
+            });
+          }
+        }
+      });
+    });
+
+    $(document).on('click', 'button#add', function (){
+      $('button#submit-wassce').trigger('click');
+      if($('form#addWassce').hasClass('error')){
+        $.toast({
+          heading: 'Information',
+          text: 'Make sure fields marked (*) are not left empty or are filled correctly',
+          icon: 'warning',
+          position: 'top-right',
+          loader: true,        // Change it to false to disable loader
+          loaderBg: '#9EC600'  // To change the background
+        });
+      }
+    })
+
+    $('form#addWassce').submit(function(e){
+      e.preventDefault();
+      var form = $(this);
+      form.removeClass('error');
+      var url = form.attr('action');
+      $.ajax({
+        url: url,
+        type: 'POST',
+        data: form.serialize(),
+        success: function (response){
+          if(response.status){
+            form.remove('input#w');
+            $('form#application-form').remove('input#w');
+            $.toast({
+              heading: 'Information',
+              text: response.message,
+              icon: 'success',
+              position: 'top-right',
+              loader: true,        
+              loaderBg: '#9EC600' 
+            });
+            $('.modal').modal('hide');
+            document.getElementById('addWassce').reset();
+           $('form#application-form').append('<input name="wassce" value="'+response.id+'" type="hidden">');
+
+           var t = `<tr data-href="`+response.id+`">
+            <td>`+response.sitting+`</td>
+            <td>`+response.card_pin+`</td>
+            <td>`+response.exam_type+`</td>
+            <td>`+response.centre+`</td>
+            <td>`+response.exam_number+`</td>
+            <td>`+response.exam_date+`</td>
+            <td>`+response.subject+`</td>
+            <td>`+response.grade+`</td>
+            <td><button id="delete" data-href="`+response.id+`" class="badge badge-danger">Delete</button></td>
+          </tr>`;
+          $('tbody').prepend(t);
+          return;
+          }
+          else{
+            $.toast({
+              heading: 'Information',
+              text: response.message,
+              icon: 'warning',
+              position: 'top-right',
+              loader: true,        
+              loaderBg: '#9EC600'  
+            });
+            return;
+          }
+        }
+      });
+    });
+
+      $(document).on('click', 'button#delete', function(){
+        var id = $(this).attr('data-href');
+      $.ajax({
+        url: "{{url('ajax-delete-wassce')}}",
+        type: 'POST',
+        data: {'id': id, csrftoken: "{{ csrf_token_ajax() }}"},
+        success: function (data){
+          if(data.status){
+            let c = `tr[data-href='`+id+`']`;
+            $(c).remove();
+            $.toast({
+              heading: 'Information',
+              text: 'Deleted successfully!',
+              icon: 'success',
+              position: 'top-right',
+              loader: true,        
+              loaderBg: '#9EC600'  
+            });
+          }
+          else{
+            $.toast({
+              heading: 'Information',
+              text: 'Could not Delete!',
+              icon: 'warning',
+              position: 'top-right',
+              loader: true,        
+              loaderBg: '#9EC600'  
+            });
+          }
+        }
+      });
+      });
+   // });
+  </script>
+  
+    <!-- End custom js for this page-->
+  </body>
+  
+  </html>

@@ -1,0 +1,310 @@
+{% extends "horizontal.base.html" %}
+
+{% block content %}
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-12 grid-margin">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title text-center p-2">NACEST On-Line Application 2021/2022</h4>
+              <form id="application-form" class="error" action="{{url('ajax-submit-application')}}">
+                {{ csrf_token()|raw }}
+                <input type="hidden" name="uid" value="{{uid}}">
+                <div>
+                  <h3>Bio-Data</h3>
+                  <section>
+                    <div class="col-lg-8 offset-lg-2">
+                    <h3>Bio-Data</h3>
+                    <div class="form-group">
+                      <label>Application Number (<small>Leave blank for new application</small>)</label>
+                      <input type="text" value="" name="app_number" class="form-control" placeholder="App number">
+                    </div>
+                    <div class="form-group">
+                      <label>First Name (<span class="text-danger">*</span>)</label>
+                      <input type="text" value="" name="first_name" class="form-control" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Middle Name </label>
+                      <input type="text" name="middle_name" class="form-control" placeholder="Middle Name">
+                    </div>
+                    <div class="form-group">
+                      <label>Last Name (<span class="text-danger">*</span>)</label>
+                      <input type="text" name="last_name" class="form-control"  placeholder="Last Name" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Phone (<span class="text-danger">*</span>)</label>
+                      <input name="phone" type="number" class="form-control" placeholder="08123456790">
+                    </div>
+                    <div class="form-group">
+                      <label>Email (<span class="text-danger">*</span>)</label>
+                      <input type="email" name="email" class="form-control" placeholder="myemail@example.com" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Gender (<span class="text-danger">*</span>)</label>
+                      <select class="form-control" name="gender" id="" required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Date of Birth (<span class="text-danger">*</span>)</label>
+                      <input name="dob" type="date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>Personnel (<span class="text-danger">*</span>)</label>
+                      <select class="form-control" name="category" id="" required>
+                        <option value="">Select</option>
+                        <option value="Military">Military</option>
+                        <option value="Civilian">Civilian</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Programme (<span class="text-danger">*</span>)</label>
+                      <select class="form-control" name="level" id="" required>
+                        <option value="">Select</option>
+                        <option value="HND">Higher National Diploma (HND)</option>
+                        <option value="ND">National National Diploma (ND)</option>
+                        <option value="PRE-HND">PRE-HND</option>
+                        <option value="PRE-ND">PRE-ND</option>
+                      </select>
+                    </div>
+                   </div>
+                  </section>
+                  <h3>Profile</h3>
+                  <section>
+                    <div class="col-lg-8 offset-2">
+                    <h3>Profile</h3>
+                    <!-- Military -->
+                    <div class="form-group">
+                      <label>Service Number (<small class="text-danger">For Military Personnel only</small>)</label>
+                      <input name="sn" type="text" class="form-control" placeholder="Enter Service Number">
+                    </div>
+                    <div class="form-group">
+                      <label>Rank (<small class="text-danger">For Military Personnel only</small>)</label>
+                      <select class="form-control" name="rank" id="">
+                        <option value="">Select</option>
+                        <option>Private</option>
+                        <option>Lance Copral</option>
+                        <option>Sergent</option>
+                        <option>Staff Sergent</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Service Number (<small class="text-danger">For Military Personnel only</small>)</label>
+                      <input name="sn" type="text" class="form-control" placeholder="Enter Service Number">
+                    </div>
+                    <div class="form-group">
+                      <label>Service Email (<small class="text-danger">For Military Personnel only</small>)</label>
+                      <input name="sn" type="email" class="form-control" placeholder="Enter Service Number">
+                    </div>
+                    <!-- End of military -->
+
+                    <div class="form-group">
+                      <label>Nationality (<span class="text-danger">*</span>)</label>
+                      <select class="form-control" name="country" required>
+                        <option value="">Select</option>
+                        <option value="Nigerian">Nigerian</option>
+                        <option value="Others">Others</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>State of Origin (<span class="text-danger">*</span>)</label>
+                      <select class="form-control" name="state" required>
+                        <option value="">Select</option>
+                        <option value="Benue">Benue</option>
+                        <option value="Others">Others</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>First Choice (<span class="text-danger">*</span>)</label>
+                      <select class="form-control" name="first_choice" required>
+                        <option value="">Select</option>
+                        <option value="Accountancy">Accountancy</option>
+                        <option value="Architecture">Architecture</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Second Choice (<span class="text-danger">*</span>)</label>
+                      <select class="form-control" name="second_choice" required>
+                        <option value="">Select</option>
+                        <option value="Accountancy">Accountancy</option>
+                        <option value="Architecture">Architecture</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label>UTME Registration Number (<span class="text-danger">*</span>)</label>
+                      <input name="jamb_reg_no" type="text" class="form-control"  placeholder="UTME Reg. No" required>
+                    </div>
+                    <div class="form-group">
+                      <label>UTME score (<span class="text-danger">*</span>)</label>
+                      <input name="jamb_score" type="number" class="form-control"  placeholder="UTME score" required>
+                    </div>
+                  </div>
+                  </section>
+                  <h3>Sponsorship</h3>
+                  <section>
+                  <div class="col-lg-8 offset-lg-2">
+                    <div class="form-group">
+                      <label> Sponsor Name</label>
+                      <input type="text" class="form-control" name="sponsor" id="sponsor" placeholder="Sponsor Name" required>
+                    </div>
+                    <div class="form-group">
+                      <label> Sponsor Address &amp; Phone No:</label>
+                      <textarea class="form-control" name="sponsor_address" id="sponsor_address" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label> Guardian Name</label>
+                      <input type="text" class="form-control" name="guardian" id="guardian" placeholder="Guardian Name"  required>
+                    </div>
+                    <div class="form-group">
+                      <label for="guardian_address">Guardian Address &amp; Phone No:</label>
+                      <textarea class="form-control" name="guardian_address" id="guardian_address" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label> Next-of-Kin Name</label>
+                      <input type="text"  name="nok" class="form-control" id="nok" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                      <label> Next-of-Kin Address &amp; Phone No:</label>
+                      <textarea name="nok_address" class="form-control" id="nok_address" rows="4" required></textarea>
+                    </div>
+                  </div>
+                  </section>
+                  <h3>WASSCE Details</h3>
+                  <section>
+                    <div class="col-lg-10 offset-lg-1">
+                    <h3>Comments</h3>
+                    <div class="row">
+                      <div class="col-lg-2 offset-lg-10">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                          Add
+                        </button>
+                      </div>
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>SITTING</th>
+                            <th>CARD PIN</th>
+                            <th>EXAM TYPE</th>
+                            <th>EXAM CENTRE</th>
+                            <th>EXAM No.</th>
+                            <th>EXAM DATE</th>
+                            <th>SUBJECT</th>
+                            <th>GRADE</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr style="display: none">
+                            <td>1</td>
+                            <td>WAEC</td>
+                            <td>23456789</td>
+                            <td>53275531</td>
+                            <td>May/June 2017</td>
+                            <td>English</td>
+                            <td>A1</td>
+                            <td><button id="delete" data-href="" class="badge badge-danger">Delete</button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  </section>
+                  <h3>Finish</h3>
+                  <section>
+                    <h3>Finish</h3>
+                    <h4 class="text-danger">Please Confirm your details before submission</h4>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="checkbox text-danger" type="checkbox" required>
+                        I agree That I've rechecked my details and that they are correct.
+                      </label>
+                    </div>
+                    <button type="submit" style="display: none" id="submit">submit</button>
+                  </section>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>        
+    </div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add WASSCE Results</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addWassce" clas="error" action="{{url('ajax-add-wassce')}}" method="post">
+          {{ csrf_token()|raw }}
+          <input type="hidden" name="uid" value="{{uid}}">
+          <div class="form-group">
+            <label>Sitting</label>
+            <select name="sitting" class="form-control" name="" id="" required>
+              <option value="">---</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Card Pin</label>
+            <input type="text" class="form-control" name="card_pin">
+          </div>
+          <div class="form-group">
+            <label>Exam</label>
+            <select class="form-control" name="exam_type" id="" required>
+              <option value="">---</option>
+              <option value="WAEC">WAEC</option>
+              <option value="NECO">NECO</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Centre Number/Name</label>
+            <input type="text" class="form-control" name="centre">
+          </div>
+          <div class="form-group">
+            <label>Exam Number</label>
+            <input type="text" class="form-control" name="exam_number" placeholder="Enter Exam Number" required>
+          </div>
+          <div class="form-group">
+            <label>Exam Date</label>
+            <input type="text" class="form-control" name="exam_date" placeholder="Jun/July 2020" required>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select class="form-control" name="subject" id="" required>
+              <option value="">---</option>
+              <option value="English">English</option>
+              <option value="Mathematics">Mathematics</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Grade</label>
+            <select class="form-control" name="grade" id="" required>
+              <option value="">---</option>
+              <option value="A1">A1</option>
+              <option value="B2">B2</option>
+            </select>
+          </div>
+          <button id="submit-wassce" type="submit" style="display: none"></button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button id="add" type="button" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+

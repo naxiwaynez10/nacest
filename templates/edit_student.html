@@ -1,0 +1,78 @@
+{% extends "base.html" %} 
+{% block content %}
+<div class="content-wrapper">
+    <div class="card p-2">
+        <h4 class="card-title">Edit Student's Details</h4>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label for="matric">Enter Matric</label>
+                    <input type="text" class="form-control" placeholder="Matric number">
+                    <button type="button" class="btn-primary btn mt-3 col-12">Check</button>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <h4 class="card-title">Change Names</h4>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="first_name">First name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="middle_name">Middle name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="last_name">Last name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="b">&nbsp;</label>
+                            <button class="btn btn-primary form-control">Change</button>
+                        </div>
+                    </div>
+                </div> 
+                <h4 class="card-title">Change Course and level</h4>
+                <div class="row">
+                   
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label for="department">New Department</label>
+                            <select name="" id="" class="form-control">
+                                <option value="">Computer Science</option>
+                                <option value="" selected>Public Administration</option>
+                                <option value="">Public Administration</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label for="i">New Level</label>
+                            <select name="" id="" class="form-control">
+                                <option value="HND2">HND 2</option>
+                                <option value="HND1" selected>HND 1</option>
+                                <option value="ND2">ND 2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-1">&nbsp;</div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label for="b">&nbsp;</label>
+                            <button class="btn btn-primary form-control">Change</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %} {% block scripts %} {% endblock %}

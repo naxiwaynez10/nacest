@@ -1,0 +1,71 @@
+{% extends "base.html" %} 
+{% block content%}
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">All <span class="text-secondary">{{level}}</span> Applications List</h4>
+            <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                <table id="order-listing" class="table">
+                    <thead>
+                    <tr>
+                        <th>APP. No</th>
+                        <th>Full Name</th>
+                        <th>Phone</th>
+                        <th>Programme</th>
+                        <th>First Choice</th>
+                        <th>Second Choice</th>
+                        <th>Personel</th>
+                        <th>DOB</th>
+                        <th>Gender</th>
+                        <th>Nationality</th>
+                        <th>State</th>
+                        <th>Reg. status</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {%if Applications %}
+                    {% for Application in Applications %}
+                    <tr>
+                        <td>{{Application.app_number}}</td>
+                        <td>{{Application.first_name}} {{Application.middle_name}} {{Application.last_name}}</td>
+                        <td>{{Application.phone}}</td>
+                        <td>{{Application.level}}</td>
+                        <td>{{Application.first_choice}}</td>
+                        <td>{{Application.second_choice}}</td>
+                        <td>{{Application.category}}</td>
+                        <td>{{Application.DOB}}</td>
+                        <td>{{Application.gender}}</td>
+                        <td>{{Application.country}}</td>
+                        <td>{{Application.state}}</td>
+                        <td>
+                            <label class="badge badge-info">On hold</label>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-primary">View</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr class="text-center">
+                        <td colspan="9">
+                            No records yet
+                        </td>
+                    </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
+{% block scripts %} 
+<script>
+    $("#order-listing").DataTable();
+</script>
+{% endblock %}

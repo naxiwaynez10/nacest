@@ -1,0 +1,58 @@
+{% extends "base.html" %} 
+{% block content%}
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">All <span class="text-secondary">{{level}}</span> Students List</h4>
+            <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                <table id="order-listing" class="table">
+                    <thead>
+                    <tr>
+                        <th>Matric. No</th>
+                        <th>Name</th>
+                        <th>Level</th>
+                        <th>Faculty</th>
+                        <th>Department</th>
+                        <th>Personel</th>
+                        <th>Gender</th>
+                        <th>Reg. status</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {%if students %}
+                    {% for student in students %}
+                    <tr>
+                        <td>{{student.matric}}</td>
+                        <td>{{student.name}}</td>
+                        <td>{{student.level}}</td>
+                        <td>{{student.faculty}}</td>
+                        <td>{{student.dept}}</td>
+                        <td>{{student.category}}</td>
+                        <td>{{student.gender}}</td>
+                        <td>
+                            <label class="badge badge-info">On hold</label>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-primary">View</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr class="text-center">
+                        <td colspan="9">
+                            No records yet
+                        </td>
+                    </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} {% block scripts %} {% endblock %}

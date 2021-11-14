@@ -1,0 +1,114 @@
+{% extends "base.html" %} 
+{% block content%}
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-body">
+        <h4 class="card-title">Add Payment</h4>
+            <form action="">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label for="matric">Matric. No</label>
+                            <input type="text" class="form-control" value="">
+                        </div>
+                    </div>
+                    <div class="col-lg-1">
+                        <div class="form-group">
+                            <label for="payment">Payment:</label>
+                            <select class="form-control" name="">
+                                <option value="">Please select--</option>
+                                <option value="">School fees</option>
+                                <option value="">Acceptance fees</option>
+                                <option value="">School fees</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label for="amount">Amount</label>
+                            <input type="text" class="form-control" value="">
+                            <input type="hidden" name="method" class="form-control" value="bank">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label for="session">Session</label>
+                            <input type="text" class="form-control" value="">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label for="semester">Semester</label>
+                            <input type="text" class="form-control" value="">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label for="ref">Reference</label>
+                            <input type="text" class="form-control" value="">
+                        </div>
+                    </div>
+                    <div class="col-lg-1">
+                        <div class="form-group">
+                            <label for="">&nbsp;</label>
+                            <button type="submit"  class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <h4 class="card-title">All <span class="text-secondary">{{level}}</span> Payments History</h4>
+            <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                <table id="order-listing" class="table">
+                    <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Matric. No</th>
+                        <th>Payment</th>
+                        <th>Amount</th>
+                        <th>Session</th>
+                        <th>Semester</th>
+                        <th>Method</th>
+                        <th>Reference</th>
+                        <th>Date paid</th>
+                        <th>print</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {%if payments %}
+                        {% set sn = 1 %}
+                    {% for payment in payments %}
+                    <tr>
+                        <td>{{sn}}</td>
+                        <td>{{payment.matric}}</td>
+                        <td>{{payment.type}}</td>
+                        <td>{{payment.amount}}</td>
+                        <td>{{payment.session}}</td>
+                        <td>{{payment.semester}}</td>
+                        <td>{{payment.method}}</td>
+                        <td>{{payment.ref}}</td>
+                        <td>{{payment.date_paid}}</td>
+                        <td>
+                            <label class="badge badge-info">print</label>
+                        </td>
+                    </tr>
+                    {% set sn = sn + 1 %}
+                    {% endfor %}
+                    {% else %}
+                    <tr class="text-center">
+                        <td colspan="9">
+                            No records yet
+                        </td>
+                    </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} {% block scripts %} {% endblock %}

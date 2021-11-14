@@ -1,0 +1,279 @@
+{% extends "base.html" %} {% block content%}
+
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="border-bottom text-center pb-4">
+                <img src="{{USER.avatar_url}}" alt="profile"
+                  class="img-lg rounded-circle mb-3" />
+                <div class="mb-3">
+                  <h3>{{USER.first_name}} {{USER.middle_name}} {{USER.last_name}}</h3>
+                  <div class="d-flex align-items-center justify-content-center">
+                    <h5 class="mb-0 me-2 text-muted">Nigerian</h5>
+                    <div class="br-wrapper br-theme-css-stars">
+                      {# <select id="profile-rating" name="rating" autocomplete="off" style="display: none">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select> #}
+                      {# <div class="br-widget">
+                        <a href="#" data-rating-value="1" data-rating-text="1" class="br-selected"></a><a href="#"
+                          data-rating-value="2" data-rating-text="2" class="br-selected"></a><a href="#"
+                          data-rating-value="3" data-rating-text="3" class="br-selected"></a><a href="#"
+                          data-rating-value="4" data-rating-text="4" class="br-selected br-current"></a><a href="#"
+                          data-rating-value="5" data-rating-text="5" class=""></a>
+                      </div> #}
+                    </div>
+                  </div>
+                </div>
+                <p class="w-75 mx-auto mb-3">
+                  Bureau Oberhaeuser is a design bureau focused on Information-
+                  and Interface Design.
+                </p>
+                <div class="d-flex justify-content-center">
+                  {# <button class="btn btn-success me-1">Hire Me</button> #}
+                  <button class="btn btn-success">{{student.category}}</button>
+                </div>
+              </div>
+              <div class="border-bottom py-4">
+                <p>Hobbies</p>
+                <div>
+                  <label class="badge badge-outline-dark mb-1">Chalk</label>
+                  <label class="badge badge-outline-dark mb-1">Hand lettering</label>
+                  <label class="badge badge-outline-dark mb-1">Information Design</label>
+                  <label class="badge badge-outline-dark mb-1">Graphic Design</label>
+                  <label class="badge badge-outline-dark mb-1">Web Design</label>
+                </div>
+              </div>
+              <div class="border-bottom py-4">
+                <div class="d-flex mb-3">
+                  <div class="progress progress-md flex-grow">
+                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="55" style="width: 55%"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <div class="progress progress-md flex-grow">
+                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="75" style="width: 75%"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="py-4">
+                <p class="clearfix">
+                  <span class="float-left"> Status </span>
+                  <span class="float-right text-muted"> Active </span>
+                </p>
+                <p class="clearfix">
+                  <span class="float-left"> Phone </span>
+                  <span class="float-right text-muted">{{USER.phone}}</span>
+                </p>
+                <p class="clearfix">
+                  <span class="float-left"> Mail </span>
+                  <span class="float-right text-muted">
+                    {{USER.email}}
+                  </span>
+                </p>
+                <p class="clearfix">
+                  <span class="float-left">Level </span>
+                  <span class="float-right text-muted">
+                    HND2
+                  </span>
+                </p>
+                <p class="clearfix">
+                  <span class="float-left">Department </span>
+                  <span class="float-right text-muted">
+                    Computer Engineering
+                  </span>
+                </p>
+                <p class="clearfix">
+                  <span class="float-left"> Faculty </span>
+                  <span class="float-right text-muted">
+                    Engineering
+                  </span>
+                </p>
+              </div>
+              <!-- <button class="btn btn-primary btn-block mb-2">Preview Profile</button> -->
+            </div>
+            <div class="col-lg-8">
+              <div class="d-block d-md-flex justify-content-between mt-4 mt-md-0">
+                <div class="text-center mt-4 mt-md-0">
+                  {# <button class="btn btn-outline-primary">Message</button> #}
+                  <!-- <button class="btn btn-primary">Request</button> -->
+                </div>
+              </div>
+              <div class="mt-4 py-2 border-top border-bottom">
+                <ul class="nav profile-navbar" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                      <i class="ti-receipt"></i>
+                      Notification
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"></i>
+                      Info
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                      <i class="ti-settings"></i>
+                      Settings
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="context-menu-hover" href="#">
+                      <i class="ti-download"></i>
+                      Downloads
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <i class="ti-clip"></i>
+                      Upload
+                    </a>
+                  </li>
+                </ul>
+              </div>
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="profile-feed">
+                      <div class="d-flex align-items-start profile-feed-item">
+                        <img src="{{SITE_URL}}assets/images/faces/face13.jpg" alt="profile"
+                          class="img-sm rounded-circle" />
+                        <div class="ms-4">
+                          <h6>
+                            Mason Beck <span class="text-muted">(HOD)</span>
+                            <small class="ms-4 text-muted"><i class="ti-time me-1"></i>10 hours</small>
+                          </h6>
+                          <p>
+                            There is no better advertisement campaign that is
+                            low cost and also successful at the same time.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="card-body">
+                      <h4 class="card-title">Bio-Data update</h4>
+                      <p class="card-description">Update your information</p>
+                      <form class="forms-sample">
+                        <div class="form-group">
+                          <label for="nationality">Nationality</label>
+                          <select class="form-control" name="country" id="">
+                            <option value="Nigerian">Nigerian</option>
+                            <option value="Others">Others</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="nationality">State of Origin</label>
+                          <select class="form-control" name="state" id="">
+                            <option>Benue</option>
+                            <option>Abuja</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="lga">LGA</label>
+                          <select class="form-control" name="lga" id="">
+                            <option>Makurdi</option>
+                            <option>Gboko</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="lga">Student Category</label>
+                          <select class="form-control" name="category" id="">
+                            <option>Military</option>
+                            <option>Civilian</option>
+                          </select>
+                        </div>
+                        
+                        <div class="form-group">
+                          <label for="phone">Phone No:</label>
+                          <input type="number" class="form-control" id="phone" placeholder="Phone no." />
+                        </div>
+                        <div class="form-group">
+                          <label for="gender">Gender</label>
+                          <select class="form-control" name="gender" id="">
+                            <option>Male</option>
+                            <option>Female</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="phone">date of Birth</label>
+                          <input type="date" class="form-control" id="phone" name="dob"/>
+                        </div>
+                        <div class="form-group">
+                          <label for="phone">Sponsor Name</label>
+                          <input type="text" class="form-control" id="sponsor" placeholder="Sponsor Name" />
+                        </div>
+                        <div class="form-group">
+                          <label for="sponsor_address">Sponsor Address &amp; Phone No:</label>
+                          <textarea class="form-control" id="sponsor_address" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="phone">Guardian Name</label>
+                          <input type="text" class="form-control" id="sponsor" placeholder="Guardian Name" />
+                        </div>
+                        <div class="form-group">
+                          <label for="sponsor_address">Guardian's Address &amp; Phone No:</label>
+                          <textarea class="form-control" id="sponsor_address" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="phone">Next-of-Kin Name</label>
+                          <input type="text" class="form-control" id="sponsor" placeholder="Next-of-Kin Name" />
+                        </div>
+                        <div class="form-group">
+                          <label for="nok_address">Next-of-Kin's Address &amp; Phone No:</label>
+                          <textarea class="form-control" id="nok_address" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary me-2">
+                          Submit
+                        </button>
+                        <button class="btn btn-light">Cancel</button>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="card-body">
+                      <h4 class="card-title">Change Password</h4>
+                      <p class="card-description">Change your password</p>
+                      <form class="forms-sample">
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1"
+                            placeholder="Password" />
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputConfirmPassword1">Confirm Password</label>
+                          <input type="password" class="form-control" id="exampleInputConfirmPassword1"
+                            placeholder="Password" />
+                        </div>
+                        <button type="submit" class="btn btn-primary me-2">
+                          Change
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %} 
+{% block scripts %} 
+
+<script>
+</script>
+
+{% endblock %}
