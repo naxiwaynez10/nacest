@@ -232,21 +232,20 @@ class Students
     }
 
     public function getWassceRecords($matric = false){
+        $matric = "48274544";
         if(!$matric){
             $student = app('students')->get();
             $matric = $student['matric'];
         }
-        app('db')->where('matric', $matric);
-        $data = app('db')->getOne('olevel');
-        $data['exam1'] = $data;
-        app('db')->where('db')->where('matric', $matric);
-        app('db')->where('db')->where('exam_number', $data['exam_number'], "!=");
-        $data['exam2'] = app('db')->getOne('olevel');
-        if(!$data['exam2']){
-            unset($data['exam1']);
-            unset($data['exam2']);
+        // if(preg_match($matric, "_")){
+        //     // Its a matric number
+        //     app('db')->where('matric', $matric);
+        // }
+        else{
+            app('db')->where('uid', $matric);
         }
-        return $data;
+        app('db')->orderBy('sitting', "ASC");
+        return app('db')->get('olevel');
     }
 
     public function getSubjects($matric, $exam_number){

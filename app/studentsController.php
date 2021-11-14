@@ -36,7 +36,10 @@ class studentsController
     //     echo app('twig')->render('edit_profile.html', $data);
     // }
 
-
+    public function regcourse(){
+        $data = array();
+        echo app('twig')->render('student_course_reg.html', $data);
+    }
     public function academicHistory(){
         $data = array();
         $data['title'] = "Add Academic History";
@@ -49,17 +52,8 @@ class studentsController
     public function wassce(){
         $data = array();
         $data['title'] = "Add O'level Results Record";
-        $exams = app('students')->getWassceRecords();
-        if(isset($exams['exam2'])){
-            // There are two sittings
-            $data['courses1'] = app('students')->getSubjects($exams['exam1']['matric'], $exams['exam1']['exam_number']);
-            $data['courses2'] = app('students')->getSubjects($exams['exam2']['matric'], $exams['exam2']['exam_number']);
-        }
-        else{
-            $data['courses1'] = app('students')->getSubjects($exams['matric'], $exams['exam_number']);
-        }
-        
-        echo app('twig')->render('add_wassce.html', $data);
+        $data['wassce'] = app('students')->getWassceRecords();
+        echo app('twig')->render('wassce.html', $data);
     }
 
     

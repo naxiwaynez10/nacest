@@ -1,0 +1,121 @@
+{% extends "base.html" %} 
+{% block content%}
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <div class="col-lg-10 offset-lg-1">
+                <h3>O'Level results</h3>
+                <div class="row">
+                  <div class="col-lg-2 offset-lg-10">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                      Add
+                    </button>
+                  </div>
+                </div>
+                <div class="table-responsive">
+                  <table id = "order-listing" class="table ordered">
+                    <thead>
+                      <tr>
+                        <th>SITTING</th>
+                        <th>CARD PIN</th>
+                        <th>EXAM TYPE</th>
+                        <th>EXAM CENTRE</th>
+                        <th>EXAM No.</th>
+                        <th>EXAM DATE</th>
+                        <th>SUBJECT</th>
+                        <th>GRADE</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                     {% for wassce in wassce %}
+                     <tr>
+                        <td>{{wassce.sitting}}</td>
+                        <td>{{wassce.card_pin}}</td>
+                        <td>{{wassce.exam}}</td>
+                        <td>{{wassce.centre}}</td>
+                        <td>{{wassce.exam_number}}</td>
+                        <td>{{wassce.exam_date}}</td>
+                        <td>{{wassce.subject}}</td>
+                        <td>{{wassce.grade}}</td>
+                        <td><button id="delete" data-href="{{wassce.id}}" class="badge badge-danger">Delete</button></td>
+                      </tr>
+                     {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Add WASSCE Results</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addWassce" clas="error" action="{{url('ajax-add-wassce')}}" method="post">
+            {{ csrf_token()|raw }}
+            <input type="hidden" name="uid" value="{{uid}}">
+            <div class="form-group">
+              <label>Sitting</label>
+              <select name="sitting" class="form-control" name="" id="" required>
+                <option value="">---</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Card Pin</label>
+              <input type="text" class="form-control" name="card_pin">
+            </div>
+            <div class="form-group">
+              <label>Exam</label>
+              <select class="form-control" name="exam_type" id="" required>
+                <option value="">---</option>
+                <option value="WAEC">WAEC</option>
+                <option value="NECO">NECO</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Centre Number/Name</label>
+              <input type="text" class="form-control" name="centre">
+            </div>
+            <div class="form-group">
+              <label>Exam Number</label>
+              <input type="text" class="form-control" name="exam_number" placeholder="Enter Exam Number" required>
+            </div>
+            <div class="form-group">
+              <label>Exam Date</label>
+              <input type="text" class="form-control" name="exam_date" placeholder="Jun/July 2020" required>
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <select class="form-control" name="subject" id="" required>
+                <option value="">---</option>
+                <option value="English">English</option>
+                <option value="Mathematics">Mathematics</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Grade</label>
+              <select class="form-control" name="grade" id="" required>
+                <option value="">---</option>
+                <option value="A1">A1</option>
+                <option value="B2">B2</option>
+              </select>
+            </div>
+            <button id="submit-wassce" type="submit" style="display: none"></button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button id="add" type="button" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %} {% block scripts %} {% endblock %}

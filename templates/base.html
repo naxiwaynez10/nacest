@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="{{SITE_URL}}assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="{{SITE_URL}}assets/css/vertical-layout-light/style.css">
   <link rel="stylesheet" href="{{SITE_URL}}assets/vendors/jquery-contextmenu/jquery.contextMenu.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">  
   <!-- endinject -->
   <link rel="shortcut icon" href="{{SITE_URL}}assets/images/favicon.png" />
   {% block stylesheet %}
@@ -440,7 +441,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/">
+            <a class="nav-link" href="{{url('regcourse')}}">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Course Reg.</span>
             </a>
@@ -454,7 +455,7 @@
             <div class="collapse" id="academy">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="">Add History</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">O'Level Results</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('olevel')}}">O'Level Results</a></li>
               </ul>
             </div>
           </li>
@@ -503,7 +504,7 @@
   <!-- endinject -->
   <!-- Plugin js for this page -->
   <script src="{{SITE_URL}}assets/vendors/chart.js/Chart.min.js"></script>
-  <script src="{{SITE_URL}}assets/vendors/datatables.net/jquery.dataTables.js"></script> 
+  <!-- <script src="{{SITE_URL}}assets/vendors/datatables.net/jquery.dataTables.js"></script>  -->
   {# <script src="{{SITE_URL}}assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script> #}
   {# <script src="{{SITE_URL}}assets/js/dataTables.select.min.js"></script> #}
 
@@ -519,9 +520,15 @@
   <!-- <script src="{{SITE_URL}}assets/js/dashboard.js"></script> -->
   <script src="{{SITE_URL}}assets/js/context-menu.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+  // call jquey
   <!-- endinject -->
   <!-- Custom js for this page-->
+  <script>
+  $(document).ready(function() {
+    $('#order-listing').DataTable();
+});
+</script>
   {% block scripts %}
 
 {% endblock %}  

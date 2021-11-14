@@ -24,11 +24,11 @@ class authController{
         } 
     }
 
-    // public function index(){
-    //     $data = array();
-    //     $data['title'] = "Sign in to your profile";
-    //     echo app('twig')->render('login.html', $data);
-    // }
+    public function reset_password(){
+        $data = array();
+        $data['title'] = "Sign in to your profile";
+        echo app('twig')->render('login.html', $data);
+    }
 
     public function register(){
         // if(app('auth')->user()['role'] != 1) header('Location: '.route('login'));
@@ -45,8 +45,8 @@ class authController{
 
     }
 
-    public function reset_password(){
+    // public function reset_password(){
 
-    }
+    // }
 
 }

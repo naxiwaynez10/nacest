@@ -16,7 +16,6 @@ if (file_exists(BASE_PATH.'config/settings.php')) {
 
     /* Auth Controller Routes   */
     $route->any('/', 'App\homeController@index')->as('home');
-    $route->any('/login', 'App\authController@index')->as('login');
     $route->any('/register', 'App\authController@register')->as('register');
     $route->any('/logout', 'App\homeController@logout')->as('logout');
     $route->any('/forgot-password', 'App\authController@forgot_password')->as('forgot-password');
@@ -39,6 +38,7 @@ if (file_exists(BASE_PATH.'config/settings.php')) {
     $route->any('/student/admisionletter', 'App\studentsController@getadmissionLetter')->as('getadmissionletter');
     $route->any('/student/guarantorform', 'App\studentsController@getGuarantorForm')->as('getguarantorform');
     $route->any('/student/regform', 'App\studentsController@getRegForm')->as('getregform');
+    $route->any('/course/register', 'App\studentsController@regcourse')->as('regcourse');
     //Payment
     $route->any('/fees/paynow', 'App\paymentController@make')->as('makepayment');
 
@@ -50,6 +50,7 @@ if (file_exists(BASE_PATH.'config/settings.php')) {
     $route->any('/admission/list', 'App\homeController@admissionList')->as('admissionlistout');
 
     // Students ajaxController Routes
+    $route->any('/ajax/course/find', 'App\studentsController@addCourse')->as('findcourse');
     $route->any('/ajax/course/add', 'App\studentsController@addCourse')->as('addcourse');
     $route->any('/ajax/course/remove', 'App\studentsController@removeCourse')->as('removecourse');
     $route->any('/ajax/reg/submit', 'App\studentsController@saveReg')->as('savereg');

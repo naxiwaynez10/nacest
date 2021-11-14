@@ -125,7 +125,7 @@ class Auth
                     setcookie('cn_auth_key', $user['auth_key'], time() + (86400 * 30), "/");
                 }
                 if($user['last_login'] == ''){
-                    exit($user['last_login']);
+                    header('Location: '.route('reset-password'));
                 } 
                 $this->updateLastLogin($user['user_id']);
                 return true;
