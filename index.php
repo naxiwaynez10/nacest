@@ -87,7 +87,7 @@ if (file_exists(BASE_PATH.'config/settings.php')) {
     $route->any('/applicationlist/{code}?', 'App\staffsController@ApplicationList')->as('applist');
 
     $route->any('/paymenthistory', 'App\staffsController@paymentHistory')->as('paymenthistory');
-    $route->any('/paymentdetails/{code}', 'App\staffsController@paymentDetails')->as('paymenthistory');
+    $route->any('/paymentdetails/{code}', 'App\staffsController@paymentDetails')->as('student_payment_history');
 
     $route->any('/student/profile/{id}', 'App\staffsController@studentProfile')->as('studentprofile');
     $route->any('/student/edit', 'App\staffsController@editStudent')->as('editstudentprofile');

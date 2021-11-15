@@ -98,6 +98,10 @@
                       <label>Service Email (<small class="text-danger">For Military Personnel only</small>)</label>
                       <input name="sn" type="email" class="form-control" placeholder="Enter Service Number">
                     </div>
+                    <div class="col-12 p-5 mb-2" id="upload" style="border: 1px dashed blue">
+                      <center>Click to Upload your millitary documents</center>
+                    </div>
+                    <input type="file" name="file" id="file" style="display: none">
                     <!-- End of military -->
 
                     <div class="form-group">
@@ -305,6 +309,15 @@
   </div>
 </div>
 
+{% endblock %}
+{% block scripts %}
+<script>
+  $(document).ready(function(){
+    $('#upload').click(function (){
+      $('#file').trigger('click');
+    })
+  })
+</script>
 {% endblock %}
 
 
